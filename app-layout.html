@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Responsive Navigation</title>                  
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
+<!--CSS Style for Nav bar-->
+<style>
+        html {
+        padding: 0;
+        margin: 0;
+        background-color: #FFF;
+    }
+    
+    body {
+        font-family: Helvetica, sans-serif;
+        font-size: 93%;
+        line-height: 1.5em;
+        padding: 0;
+        margin: 0;
+    }
+    
+    a, a:link, a:visited {
+        color: blue;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {margin-top: 0;}
+    
+    p {margin: 0 0 1em 0;}
+    
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .page-header {
+        background-color: #305782;
+        padding: 30px 20px;
+        color: #FFF;
+    }
+    
+    .page-header-inner {
+        padding: 0 20px;
+    }
+    
+    .page-header h1 {
+        margin: 0;
+    }
+    
+    /* Nav Menu */
+    div.nav-menu {
+        background-color: #e7ecf2;
+        padding: 0 20px;
+    }
+    
+    div.nav-menu ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    div.nav-menu ul li {
+        list-style: none;
+        float: left;
+    }
+    
+    div.nav-menu ul li a:link,
+    div.nav-menu ul li a:visited {
+        display: block;
+        font-size: 90%;
+        padding: 10px 25px 10px 0;
+        color: #305782;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .menu-trigger {
+        display: none;
+    }
+    
+    @media screen and (max-width: 480px) {
+        
+        .menu-trigger {
+            display: block;
+            color: #305782;
+            background-color: #d5dce4;
+            padding: 10px;
+            text-align: right;
+            font-size: 83%;
+            cursor: pointer;
+        }
+        
+        div.nav-menu {
+            display: none;
+        }
+        div.nav-expanded {
+            display: block;
+        }
+        div.nav-menu ul li {
+            float: none;
+            border-bottom: 2px solid #d5dce4;
+        }
+        div.nav-menu ul li:last-child {
+            border-bottom: none;
+        }
+    }
+
+.menu-trigger {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .menu-trigger {
+        display: block;
+    }
+
+    div.nav-menu {
+        display: none;
+    }
+
+    div.nav-expanded {
+        display: block;
+    }
+
+    div.nav-menu ul li {
+        float: none;
+        border-bottom: 2px solid black;
+    }
+    div.nav-menu ul li: last-child {
+        border-bottom: none;
+    }
+}
+
+    .clearfix:before, .clearfix:after { content: ""; display: table; }
+    .clearfix:after { clear: both; }
+    .clearfix { *zoom: 1; }
+    </style>
+</head>
+
+<body>
+	
+	<!-- container -->
+	<div class="container">
+		
+		<!-- page-header -->
+		<div class="page-header">
+			<h1>Page Header</h1>
+		</div><!-- /page-header -->
+		
+		<span class="menu-trigger">MENU</span>
+		
+		<!-- nav-menu -->
+		<div class="nav-menu">
+			<ul class="clearfix">
+				<li><a href="#">Menu Item 1</a></li>
+				<li><a href="#">Menu Item 2</a></li>
+				<li><a href="#">Menu Item 3</a></li>
+				<li><a href="#">Menu Item 4</a></li>
+				<li><a href="#">Menu Item 5</a></li>
+			</ul>
+		</div><!-- /nav-menu -->
+
+		<!-- main-content -->
+		<div class="main-content">
+
+			<h2>Main Content</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<ul>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+				<li>List item five</li>
+			</ul>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<ul>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+				<li>List item five</li>
+			</ul>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<ul>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+				<li>List item five</li>
+			</ul>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        </div><!-- /main-content -->
+        
+    </div><!-- /container -->	
+
+<!--Javascript for Nav bar-->
+<script>
+$(document).ready(function() {	
+        $(".menu-trigger").click(function() {
+            $(".nav-menu").slideToggle(400, function() {
+                $(this).toggleClass("nav-expanded").css('display', '');
+            }); 
+        });  
+    });    
+</script>
+
+</body>
+</html>
