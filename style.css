@@ -126,6 +126,12 @@ html {
     }
 }
 
-    .clearfix:before, .clearfix:after { content: ""; display: table; }
-    .clearfix:after { clear: both; }
-    .clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+footer {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
