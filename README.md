@@ -7,3 +7,15 @@ Key Topics:
 * Server-side APIs
 * Git branching workflow
 * Agile software development
+
+Our Goal:
+This App will give you recommendations for a perfect night at home. Including recommendations based on mood for books, movies, and nearby food options.
+
+App asks users these questions:
+* How are you feeling today?
+  * Select by mood (happy, optimistic, sad, anxious, playful, slaphappy, etc)
+* Do you prefer books or movies?
+  * We could have the app recommend either a book or a movie (or potentially both) based on user input.
+* What is your favorite food?
+  * Search by type (pizza, burgers, mexican, asian, etc) and get recommendations based on your location.
+
