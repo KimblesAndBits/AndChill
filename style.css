@@ -1,6 +1,4 @@
-<!--CSS Style for Nav bar-->
-<style>
-        html {
+html {
         padding: 0;
         margin: 0;
         background-color: #FFF;
@@ -128,7 +126,12 @@
     }
 }
 
-    .clearfix:before, .clearfix:after { content: ""; display: table; }
-    .clearfix:after { clear: both; }
-    .clearfix { *zoom: 1; }
-    </style>
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+footer {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
