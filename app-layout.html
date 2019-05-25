@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-	<title>Unit 8 - Project 1</title>                  
+	<title>&chill</title>                  
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 	<!-- jQuery link goes here-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
 	<!-- Bootstrap link goes here -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- CSS link goes here -->
@@ -19,7 +20,9 @@
 		
 		<!-- page-header -->
 		<div class="page-header">
-			<h1>Unit 8 - Project 1</h1>
+			<h1>&chill</h1>
+			<h1>andChill</h1>
+			<h1>and_chill</h1>
 		</div>
 		
 		<span class="menu-trigger">Menu</span>
@@ -27,9 +30,9 @@
 		<!-- nav-menu -->
 		<div class="nav-menu">
 			<ul class="clearfix">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Most Popular</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="#">Menu #1</a></li>
+				<li><a href="#">Menu #2</a></li>
+				<li><a href="#">Menu #3</a></li>
 			</ul>
 		</div>
 
@@ -39,48 +42,188 @@
 		<!-- card with "Mood" content -->
 		  <div class="card">
 		    <div class="card-body">
-			  <h3>How Are You Feeling Today?</h3>
-			  <p>Select a mood to begin</p>
-					
-				<ul>
-				  <li>Happy</li>
-				  <li>Sad</li>
-				  <li>Slaphappy</li>
-				  <li>Romantic</li>
-				  <li>Scared</li>
-				</ul>
-			</div>
-		  </div>
-
-		<!-- card with "Books or Movies" contnet-->
-		  <div class="card">
-			<div class="card-body">
-			  <h3>Do You Prefer Books or Movies?</h3>
-			  <p>Select a preference</p>
-						
-				<ul>
-				  <li>Books</li>
-				  <li>Movies</li>
-				</ul>
+				<!-- Mood form -->
+				<form>
+					<div class="form-group">
+						<label for="moodInput"><h3>How Are You Feeling Today?</h3></label>
+						<select class="form-control" id="moodInput" required>
+							<option value="" selected>Choose...</option>
+							<option>Dramatic</option>
+							<option>Intense</option>
+							<option>Funny</option>
+							<option>Uplifting</option>
+							<option>Challenging</option>
+							<option>Touching</option>
+							<option>Inspiring</option>
+							<option>Thought Provoking</option>
+							<option>Scary</option>
+							<option>Dark</option>
+							<option>Depressing</option>
+							<option>Suspenseful</option>
+							<option>Emotional</option>
+							<option>Heart Warming</option>
+						</select>
+					</div>
 			</div>
 		  </div>
 			
 		<!-- card with "Favorite Food" content -->
 		  <div class="card">
 			<div class="card-body">
-			  <h3>What Is Your Favorite Food?</h3>
-			  <p>Select a food type</p>
-				
-				<ul>
-				  <li>Pizza</li>
-				  <li>Burgers</li>
-				  <li>Mexican</li>
-				  <li>Chinese</li>
-				  <li>Vegan</li>
-				</ul>
+			  
+			  <!-- Favorite food form -->
+					<div class="form-group">
+						<label for="foodInput"><h3>What Is Your Favorite Food?</h3></label>
+						<select class="form-control" id="foodInput" required>
+							<option value="" selected>Choose...</option>
+							<option>African</option>
+							<option>American</option>
+							<option>Asian</option>
+							<option>BBQ</option>
+							<option>Bakery</option>
+							<option>Bar Food</option>
+							<option>Belgian</option>
+							<option>Beverages</option>
+							<option>Breakfast</option>
+							<option>British</option>
+							<option>Bubble Tea</option>
+							<option>Burger</option>
+							<option>Cafe</option>
+							<option>Cajun</option>
+							<option>Cambodian</option>
+							<option>Caribbean</option>
+							<option>Chinese</option>
+							<option>Coffee and Tea</option>
+							<option>Creole</option>
+							<option>Deli</option>
+							<option>Desserts</option>
+							<option>Dim Sum</option>
+							<option>Diner</option>
+							<option>Donuts</option>
+							<option>Drinks Only</option>
+							<option>European</option>
+							<option>Fillipino</option>
+							<option>French</option>
+							<option>Frozen Yogurt</option>
+							<option>German</option>
+							<option>Greek</option>
+							<option>Hawaiian</option>
+							<option>Healthy Food</option>
+							<option>Hungarian</option>
+							<option>International</option>
+							<option>Irish</option>
+							<option>Italian</option>
+							<option>Japanese</option>
+							<option>Korean</option>
+							<option>Latin American</option>
+							<option>Mediterranean</option>
+							<option>Mexican</option>
+							<option>Middle Eastern</option>
+							<option>New American</option>
+							<option>Pacific Northwest</option>
+							<option>Peruvian</option>
+							<option>Pizza</option>
+							<option>Po'Boys</option>
+							<option>Pub Food</option>
+							<option>Ramen</option>
+							<option>Salad</option>
+							<option>Sandwich</option>
+							<option>Scottish</option>
+							<option>Seafood</option>
+							<option>Snack Bar</option>
+							<option>South American</option>
+							<option>Southern</option>
+							<option>Spanish</option>
+							<option>Steak</option>
+							<option>Sushi</option>
+							<option>Tapas</option>
+							<option>Tea</option>
+							<option>Teriyaki</option>
+							<option>Tex-Mex</option>
+							<option>Thai</option>
+							<option>Vegetarian</option>
+							<option>Vietnamese</option>
+						</select>
+					</div>
 			</div>
-		  </div>
+			</div>
+			
+			<!-- Card with Address input-->
+			<div class="card">
+				<div class="card-body">
+					<!-- Address form -->
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputCity">City</label>
+								<input type="text" class="form-control" id="inputCity" required>
+							</div>
+							<div class="form-group col-md-4">
+								<label for="inputState">State</label>
+								<select id="inputState" class="form-control" required>
+									<option value="" selected>Choose...</option>
+									<option>AL</option>
+									<option>AK</option>
+									<option>AZ</option>
+									<option>AR</option>
+									<option>CA</option>
+									<option>CO</option>
+									<option>CT</option>
+									<option>DE</option>
+									<option>FL</option>
+									<option>GA</option>
+									<option>HI</option>
+									<option>ID</option>
+									<option>IL</option>
+									<option>IN</option>
+									<option>IA</option>
+									<option>KS</option>
+									<option>KY</option>
+									<option>LA</option>
+									<option>ME</option>
+									<option>MD</option>
+									<option>MA</option>
+									<option>MI</option>
+									<option>MN</option>
+									<option>MS</option>
+									<option>MO</option>
+									<option>MT</option>
+									<option>NE</option>
+									<option>NV</option>
+									<option>NH</option>
+									<option>NJ</option>
+									<option>NM</option>
+									<option>NY</option>
+									<option>NC</option>
+									<option>ND</option>
+									<option>OH</option>
+									<option>OK</option>
+									<option>OR</option>
+									<option>PA</option>
+									<option>RI</option>
+									<option>SC</option>
+									<option>SD</option>
+									<option>TN</option>
+									<option>TX</option>
+									<option>UT</option>
+									<option>VT</option>
+									<option>VA</option>
+									<option>WA</option>
+									<option>WV</option>
+									<option>WI</option>
+									<option>WY</option>
+								</select>
+							</div>
+							<div class="form-group col-md-2">
+								<label for="inputZip">ZIP</label>
+								<input type="text" pattern="[0-9]*" class="form-control" id="inputZip" required minlength="5" maxlength="5">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+					</form>
+				</div>
+			</div>
 
+			
         </div> <!-- </div> for main content -->
 	</div> <!-- </div> for container -->
 
