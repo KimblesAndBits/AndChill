@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Unit 8 - Project 1</title>                  
+	<title>&chill</title>                  
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 	<!-- jQuery link goes here-->
@@ -19,7 +19,9 @@
 		
 		<!-- page-header -->
 		<div class="page-header">
-			<h1>Unit 8 - Project 1</h1>
+			<h1>&chill</h1>
+			<h1>andChill</h1>
+			<h1>and_chill</h1>
 		</div>
 		
 		<span class="menu-trigger">Menu</span>
@@ -27,9 +29,9 @@
 		<!-- nav-menu -->
 		<div class="nav-menu">
 			<ul class="clearfix">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Most Popular</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="#">Menu #1</a></li>
+				<li><a href="#">Menu #2</a></li>
+				<li><a href="#">Menu #3</a></li>
 			</ul>
 		</div>
 
@@ -39,48 +41,130 @@
 		<!-- card with "Mood" content -->
 		  <div class="card">
 		    <div class="card-body">
-			  <h3>How Are You Feeling Today?</h3>
-			  <p>Select a mood to begin</p>
-					
-				<ul>
-				  <li>Happy</li>
-				  <li>Sad</li>
-				  <li>Slaphappy</li>
-				  <li>Romantic</li>
-				  <li>Scared</li>
-				</ul>
-			</div>
-		  </div>
-
-		<!-- card with "Books or Movies" contnet-->
-		  <div class="card">
-			<div class="card-body">
-			  <h3>Do You Prefer Books or Movies?</h3>
-			  <p>Select a preference</p>
-						
-				<ul>
-				  <li>Books</li>
-				  <li>Movies</li>
-				</ul>
+				<!-- Mood form -->
+				<form>
+					<div class="form-group">
+						<label for="exampleFormControlSelect1"><h3>How Are You Feeling Today?</h3></label>
+						<select class="form-control" id="exampleFormControlSelect1">
+							<option selected>Choose...</option>
+							<option>Dramatic</option>
+							<option>Intense</option>
+							<option>Funny</option>
+							<option>Uplifting</option>
+							<option>Challenging</option>
+							<option>Touching</option>
+							<option>Inspiring</option>
+							<option>Thought Provoking</option>
+							<option>Scary</option>
+							<option>Dark</option>
+							<option>Depressing</option>
+							<option>Suspenseful</option>
+							<option>Emotional</option>
+							<option>Heart Warming</option>
+						</select>
+					</div>
+				</form>
 			</div>
 		  </div>
 			
 		<!-- card with "Favorite Food" content -->
 		  <div class="card">
 			<div class="card-body">
-			  <h3>What Is Your Favorite Food?</h3>
-			  <p>Select a food type</p>
-				
-				<ul>
-				  <li>Pizza</li>
-				  <li>Burgers</li>
-				  <li>Mexican</li>
-				  <li>Chinese</li>
-				  <li>Vegan</li>
-				</ul>
+			  
+			  <!-- Favorite food form -->
+				<form>
+					<div class="form-group">
+						<label for="exampleFormControlSelect1"><h3>What Is Your Favorite Food?</h3></label>
+						<select class="form-control" id="exampleFormControlSelect1">
+							<option selected>Choose...</option>
+							<option>Pizza</option>
+							<option>Burgers</option>
+							<option>Mexican</option>
+							<option>Asian</option>
+							<option>Vegan</option>
+						</select>
+					</div>
+				</form>
 			</div>
-		  </div>
+			</div>
+			
+			<!-- Card with Address input-->
+			<div class="card">
+				<div class="card-body">
+					<!-- Address form -->
+					<form>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputCity">City</label>
+								<input type="text" class="form-control" id="inputCity">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="inputState">State</label>
+								<select id="inputState" class="form-control">
+									<option selected>Choose...</option>
+									<option>AL</option>
+									<option>AK</option>
+									<option>AZ</option>
+									<option>AR</option>
+									<option>CA</option>
+									<option>CO</option>
+									<option>CT</option>
+									<option>DE</option>
+									<option>FL</option>
+									<option>GA</option>
+									<option>HI</option>
+									<option>ID</option>
+									<option>IL</option>
+									<option>IN</option>
+									<option>IA</option>
+									<option>KS</option>
+									<option>KY</option>
+									<option>LA</option>
+									<option>ME</option>
+									<option>MD</option>
+									<option>MA</option>
+									<option>MI</option>
+									<option>MN</option>
+									<option>MS</option>
+									<option>MO</option>
+									<option>MT</option>
+									<option>NE</option>
+									<option>NV</option>
+									<option>NH</option>
+									<option>NJ</option>
+									<option>NM</option>
+									<option>NY</option>
+									<option>NC</option>
+									<option>ND</option>
+									<option>OH</option>
+									<option>OK</option>
+									<option>OR</option>
+									<option>PA</option>
+									<option>RI</option>
+									<option>SC</option>
+									<option>SD</option>
+									<option>TN</option>
+									<option>TX</option>
+									<option>UT</option>
+									<option>VT</option>
+									<option>VA</option>
+									<option>WA</option>
+									<option>WV</option>
+									<option>WI</option>
+									<option>WY</option>
+								</select>
+							</div>
+							<div class="form-group col-md-2">
+								<label for="inputZip">Zip</label>
+								<input type="text" class="form-control" id="inputZip">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
 
+			
         </div> <!-- </div> for main content -->
 	</div> <!-- </div> for container -->
 
