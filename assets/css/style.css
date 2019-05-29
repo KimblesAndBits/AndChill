@@ -5,26 +5,36 @@ html {
     
     body {
         font-family: Helvetica, sans-serif;
-        background-color: #305782;
-        font-size: 93%;
+        color: #305782;
+        background: url(https://hpshplaidline.files.wordpress.com/2019/03/movies-featured.jpg);
         line-height: 1.5em;
         padding: 0;
         margin: 0;
+    }
+
+    .card {
+        margin-top: 10px;
+        margin bottom: 10px;
     }
     
     .container {
         max-width: 700px;
         margin: 0 auto;
-    }
-    
-    .main-content {
-        padding: 20px;
+        background: #FFF;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     
     .page-header {
         background-color: #FFF;
         padding: 30px 20px;
         color: #305782;
+    }
+
+    #header {
+        background: url(https://media.wired.com/photos/59de99f39db9cf4266631b87/master/w_1440,c_limit/Movies-TopArt.jpg);
+	    text-align: center;
+        color: #FFF;
     }
 
     footer {
