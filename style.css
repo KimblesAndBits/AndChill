@@ -6,19 +6,18 @@ html {
     
     body {
         font-family: Helvetica, sans-serif;
+        background-color: #305782;
         font-size: 93%;
         line-height: 1.5em;
         padding: 0;
         margin: 0;
     }
-    
-    a, a:link, a:visited {
-        color: blue;
+
+    footer {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
     }
-    
-    h1, h2, h3, h4, h5, h6 {margin-top: 0;}
-    
-    p {margin: 0 0 1em 0;}
     
     .container {
         max-width: 700px;
@@ -30,9 +29,9 @@ html {
     }
     
     .page-header {
-        background-color: #305782;
+        background-color: #FFF;
         padding: 30px 20px;
-        color: #FFF;
+        color: #305782;
     }
     
     .page-header-inner {
@@ -129,9 +128,3 @@ html {
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
-
-footer {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-}
