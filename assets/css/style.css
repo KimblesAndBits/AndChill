@@ -1,24 +1,16 @@
 html {
         padding: 0;
         margin: 0;
-        background-color: #FFF;
     }
     
     body {
         font-family: Helvetica, sans-serif;
+        background-color: #305782;
         font-size: 93%;
         line-height: 1.5em;
         padding: 0;
         margin: 0;
     }
-    
-    a, a:link, a:visited {
-        color: blue;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {margin-top: 0;}
-    
-    p {margin: 0 0 1em 0;}
     
     .container {
         max-width: 700px;
@@ -30,17 +22,16 @@ html {
     }
     
     .page-header {
-        background-color: #305782;
+        background-color: #FFF;
         padding: 30px 20px;
-        color: #FFF;
+        color: #305782;
     }
-    
-    .page-header-inner {
-        padding: 0 20px;
-    }
-    
-    .page-header h1 {
-        margin: 0;
+
+    footer {
+        text-align: center;
+        max-width: 700px;
+        color: #305782;
+        margin: 0 auto;
     }
     
     /* Nav Menu */
@@ -78,7 +69,7 @@ html {
         .menu-trigger {
             display: block;
             color: #305782;
-            background-color: #d5dce4;
+            background-color: #FFF;
             padding: 10px;
             text-align: right;
             font-size: 83%;
@@ -129,9 +120,3 @@ html {
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
-
-footer {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-}
