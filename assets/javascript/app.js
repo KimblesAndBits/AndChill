@@ -5,7 +5,7 @@ $(document).ready(function() {
             $(this).toggleClass("nav-expanded").css('display', '');
         }); 
     });
-    
+   
     var yourMood = "";
     var yourFood = "";
     var yourCity = "";
