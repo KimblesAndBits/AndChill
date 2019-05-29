@@ -7,13 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 	<!-- jQuery link goes here-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
-	<script type="javascript" src="assets/javascript/app.js"></script>
 	<!-- Bootstrap link goes here -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- CSS link goes here -->
-	<link rel="stylesheet" media="screen, projection" href="assets/css/style.css">
-	<!-- Fav Icon / Logo-->
+    <link rel="stylesheet" media="screen, projection" href="style.css">
+    <!-- Fav Icon / Logo-->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/logos/logo1.png">
 </head>
 <body>
@@ -46,9 +44,9 @@
 				<!-- Mood form -->
 				<form>
 					<div class="form-group">
-						<label for="moodInput"><h3>How Are You Feeling Today?</h3></label>
-						<select class="form-control" id="moodInput" required>
-							<option value="" selected>Choose...</option>
+						<label for="exampleFormControlSelect1"><h3>How Are You Feeling Today?</h3></label>
+						<select class="form-control" id="exampleFormControlSelect1">
+							<option selected>Choose...</option>
 							<option>Dramatic</option>
 							<option>Intense</option>
 							<option>Funny</option>
@@ -65,6 +63,7 @@
 							<option>Heart Warming</option>
 						</select>
 					</div>
+				</form>
 			</div>
 		  </div>
 			
@@ -73,10 +72,11 @@
 			<div class="card-body">
 			  
 			  <!-- Favorite food form -->
+				<form>
 					<div class="form-group">
-						<label for="foodInput"><h3>What Is Your Favorite Food?</h3></label>
-						<select class="form-control" id="foodInput" required>
-							<option value="" selected>Choose...</option>
+						<label for="exampleFormControlSelect1"><h3>What Is Your Favorite Food?</h3></label>
+						<select class="form-control" id="exampleFormControlSelect1">
+							<option selected>Choose...</option>
 							<option>African</option>
 							<option>American</option>
 							<option>Asian</option>
@@ -146,6 +146,7 @@
 							<option>Vietnamese</option>
 						</select>
 					</div>
+				</form>
 			</div>
 			</div>
 			
@@ -153,15 +154,16 @@
 			<div class="card">
 				<div class="card-body">
 					<!-- Address form -->
+					<form>
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label for="inputCity">City</label>
-								<input type="text" class="form-control" id="inputCity" required>
+								<input type="text" class="form-control" id="inputCity">
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputState">State</label>
-								<select id="inputState" class="form-control" required>
-									<option value="" selected>Choose...</option>
+								<select id="inputState" class="form-control">
+									<option selected>Choose...</option>
 									<option>AL</option>
 									<option>AK</option>
 									<option>AZ</option>
@@ -215,11 +217,11 @@
 								</select>
 							</div>
 							<div class="form-group col-md-2">
-								<label for="inputZip">ZIP</label>
-								<input type="text" pattern="[0-9]*" class="form-control" id="inputZip" required minlength="5" maxlength="5">
+								<label for="inputZip">Zip</label>
+								<input type="text" class="form-control" id="inputZip">
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
 				</div>
 			</div>
@@ -236,5 +238,6 @@
   </div>
 </footer>
 <!-- Javascript link goes here -->
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
