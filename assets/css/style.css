@@ -4,6 +4,10 @@ html {
         font-family: 'Open Sans', sans-serif;
     }
     
+    #submit-button {
+        background: white;
+    }
+
     body {
         color: #305782;
         background: url(https://hpshplaidline.files.wordpress.com/2019/03/movies-featured.jpg);
@@ -15,7 +19,7 @@ html {
 
     .card {
         margin-top: 10px;
-        margin bottom: 10px;
+        margin-bottom: 10px;
     }
 
     h5 {
@@ -151,11 +155,11 @@ html {
         display: block;
     }
 
-    div.nav-menu ul li {
+    div.nav-menu, ul, li {
         float: none;
         border-bottom: 2px solid black;
     }
-    div.nav-menu ul li: last-child {
+    div.nav-menu, ul, li: last-child {
         border-bottom: none;
     }
 }
