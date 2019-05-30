@@ -1,6 +1,7 @@
 html {
         padding: 0;
         margin: 0;
+        font-family: 'Unica One', cursive;
     }
     
     body {
@@ -10,6 +11,7 @@ html {
         line-height: 1.5em;
         padding: 0;
         margin: 0;
+        font-family: 'Unica One', cursive;
     }
 
     .card {
@@ -20,21 +22,35 @@ html {
     .container {
         max-width: 700px;
         margin: 0 auto;
-        background: #FFF;
+        color: #305782;
         padding-top: 10px;
         padding-bottom: 10px;
+        background: url(http://www.24flix.com/wp-content/uploads/2015/08/entertainment-wallpaper-1024x576.jpg);
+        background-position: center;
+        background-size: cover;
+        text-align: center;
     }
     
     .page-header {
         background-color: #FFF;
         padding: 30px 20px;
         color: #305782;
+        font-family: 'Boogaloo', cursive;
     }
 
     #header {
-        background: url(https://media.wired.com/photos/59de99f39db9cf4266631b87/master/w_1440,c_limit/Movies-TopArt.jpg);
-	    text-align: center;
+        background: url(http://www.24flix.com/wp-content/uploads/2015/08/entertainment-wallpaper-1024x576.jpg);
+	    background-position: center;
+	    background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
         color: #FFF;
+        font-family: 'Boogaloo', cursive;
+    }
+
+    #footer {
+        text-align: center;
+        color: #305782;
     }
 
     footer {
