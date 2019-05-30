@@ -20,7 +20,6 @@ $(document).ready(function() {
         yourCity = $("#inputCity").val();
         yourState = $("#inputState").val();
         yourZip = $("#inputZip").val();
-        console.log(`${yourMood} ${yourFood} ${yourCity} ${yourState} ${yourZip}`)
         $("#moodInput").val("");
         $("#foodInput").val("");
         $("#inputCity").val("");
