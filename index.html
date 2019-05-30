@@ -188,6 +188,7 @@
 							  </div>
 						</div>
 						<div class="col-md-4">
+							<!-- Collapsable "accordion" cards for user input -->
 								<div class="card">
 										<div class="card-header" id="headingThree">
 										  <h2 class="mb-0">
@@ -209,8 +210,60 @@
 														<input type="text" class="form-control" id="inputCity" required>
 													  </div>
 														<div class="form-group col-md-6">
-														  <label for="inputZip">ZIP</label>
-															<input type="text" pattern="[0-9]*" class="form-control" id="inputZip" required minlength="5" maxlength="5">
+															<label for="inputState">State</label>
+															<select id="inputState" class="form-control" required>
+																<option value="" selected>Choose...</option>
+																<option>AL</option>
+																<option>AK</option>
+																<option>AZ</option>
+																<option>AR</option>
+																<option>CA</option>
+																<option>CO</option>
+																<option>CT</option>
+																<option>DE</option>
+																<option>FL</option>
+																<option>GA</option>
+																<option>HI</option>
+																<option>ID</option>
+																<option>IL</option>
+																<option>IN</option>
+																<option>IA</option>
+																<option>KS</option>
+																<option>KY</option>
+																<option>LA</option>
+																<option>ME</option>
+																<option>MD</option>
+																<option>MA</option>
+																<option>MI</option>
+																<option>MN</option>
+																<option>MS</option>
+																<option>MO</option>
+																<option>MT</option>
+																<option>NE</option>
+																<option>NV</option>
+																<option>NH</option>
+																<option>NJ</option>
+																<option>NM</option>
+																<option>NY</option>
+																<option>NC</option>
+																<option>ND</option>
+																<option>OH</option>
+																<option>OK</option>
+																<option>OR</option>
+																<option>PA</option>
+																<option>RI</option>
+																<option>SC</option>
+																<option>SD</option>
+																<option>TN</option>
+																<option>TX</option>
+																<option>UT</option>
+																<option>VT</option>
+																<option>VA</option>
+																<option>WA</option>
+																<option>WV</option>
+																<option>WI</option>
+																<option>WY</option>
+															</select>
 														</div>
 													  </div>
 														<button type="submit" class="btn" id="submit-button">Submit</button>
@@ -229,24 +282,23 @@
 
 					  <div class="card">
 							<div class="card-body" id="results">
-							  <!-- Card for Movie / Food Results -->
+								<!-- Card for Movie / Food Results -->
+								<h5>Your Reccomendations</h5>
 							  <div class="container">
 									<div class="row">
 									  <div class="col">
 									  <!-- Card for movie results-->
 										<div class="card">
 										  <div class="card-body">
-											Movie results
+										
 											<img src="https://media.wired.com/photos/59de99f39db9cf4266631b87/master/w_1440,c_limit/Movies-TopArt.jpg" class="card-img" alt="movie">
-											<p>
-											  <ul>
-												<li>Name</li>
-												<li>Genre</li>
-												<li>Rating</li>
-												<li>Release Year</li>
-												<li>Director</li>
-											  </ul>
-											</p>
+											
+												<p>Name</p>
+												<p>Genre</p>
+												<p>Rating</p>
+												<p>Release Year</p>
+												<p>Director</p>
+											
 										  </div>
 										  </div>
 									  </div>
@@ -254,18 +306,16 @@
 										<!-- Card for food results-->
 										  <div class="card">
 											<div class="card-body">
-											Food results
+										
 											<img src="https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg" class="card-img" style="width: 200px" alt="food">
-											<p>
-											  <ul>
-												<li>Name</li>
-												<li>Type</li>
-												<li>Rating</li>
-												<li>Price</li>
-												<li>Open Now</li>
-												<li>Delivery</li>
-											  </ul>
-											</p>
+											
+												<p>Name</p>
+												<p>Type</p>
+												<p>Rating</p>
+												<p>Price</p>
+												<p>Open Now</p>
+												<p>Delivery</p>
+											  
 										  </div>
 										  </div>
 									  </div>

@@ -17,6 +17,10 @@ html {
         margin-top: 10px;
         margin bottom: 10px;
     }
+
+    h5 {
+        color: #FFF;
+    }
     
     .container {
         color: #305782;
