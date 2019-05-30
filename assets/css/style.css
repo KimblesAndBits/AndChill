@@ -19,48 +19,52 @@ html {
     }
     
     .container {
-        max-width: 700px;
-        margin: 0 auto;
         color: #305782;
         padding-top: 10px;
         padding-bottom: 10px;
         text-align: center;
     }
 
+    #content {
+        background: url(https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    }
+
+    #results {
+        background: url(https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    }
+
     .card-img {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
+        width: 220px;
+        height: 200px;
       }
     
     .page-header {
         background-color: #FFF;
         padding: 30px 20px;
-        color: #305782;
+        color: #FFF;
         font-family: 'Sonsie One', cursive;
     }
 
     #header {
-        background: url(http://www.24flix.com/wp-content/uploads/2015/08/entertainment-wallpaper-1024x576.jpg);
-	    background-position: center;
-	    background-repeat: no-repeat;
-        background-size: cover;
+        background: url(https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
         text-align: center;
         color: #FFF;
         font-family: 'Sonsie One', cursive;
     }
 
     #footer {
+        background: url(https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
         text-align: center;
-        color: #305782;
+        color: #FFF;
         font-family: 'Sonsie One', cursive;
     }
 
     footer {
         text-align: center;
-        max-width: 700px;
-        color: #305782;
+        color: #FFF;
         margin: 0 auto;
         font-family: 'Sonsie One', cursive;
     }
