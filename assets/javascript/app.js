@@ -48,7 +48,6 @@ $(document).ready(function () {
                                 success: function (msg) {
                                     console.log('mes', msg);
                                     populateFood(msg.restaurants);
-                                    $("#suggestion-modal").modal("show");
                                 }
                             });
                     }
