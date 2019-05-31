@@ -71,15 +71,16 @@ $(document).ready(function () {
         $("#foodInput").val("");
         $("#inputCity").val("");
         $("#inputState").val("");
-    }
+    };
 
     function populateFood(array) {
-        $("#rest-name").text(`Name: ${array[0].restaurant.name}`);
-        $("#rest-address").text(`Address: ${array[0].restaurant.location.address}`);
-        $("#rest-price").text(`Avg cost for 2: $${array[0].restaurant.average_cost_for_two}`);
-        $("#rest-rating").text(`Rating: ${array[0].restaurant.user_rating.aggregate_rating}`);
-        $("#rest-url").text(`URL: ${array[0].restaurant.url}`);
-    }
+        arrayIdx = Math.floor(Math.random() * array.length);
+        $("#rest-name").text(`Name: ${array[arrayIdx].restaurant.name}`);
+        $("#rest-address").text(`Address: ${array[arrayIdx].restaurant.location.address}`);
+        $("#rest-price").text(`Avg cost for 2: $${array[arrayIdx].restaurant.average_cost_for_two}`);
+        $("#rest-rating").text(`Rating: ${array[arrayIdx].restaurant.user_rating.aggregate_rating}`);
+        $("#rest-url").text(`URL: ${array[arrayIdx].restaurant.url}`);
+    };
 
 
 console.log("Thank you!");
