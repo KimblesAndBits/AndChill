@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>    
+
 </head>
+
 <body>
+	
+        <form action="" method="get" id="search-youtube">
+            <div>
+                <input type="text" name="q" id="q" />
+                <input type="submit" value="Search" />
+            </div>
+        </form>
+        
+        <div id="response"></div>
+            
+        
+        <!-- <script type="text/javascript" src="jquery.js"></script> -->
+       
+        <!-- <script src="https://apis.google.com/js/client.js?onload=init"></script>	 -->
+        <script src="https://apis.google.com/js/api.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+        <script type="text/javascript" src="app1.js"></script>
+
+    <button onclick="authenticate().then(loadClient)">authorize and load</button>
+    <button onclick="execute()">execute</button>
+        </body>
+<!-- <body>
+
+
+        <form id="getstuff">
+
+        <input id="search"></input><button id="go" type="button">Go</button>
+        </form>
+        <div id="pageToken"></div>
+
+
+
+        <script>
+                function start() {
+                  // 2. Initialize the JavaScript client library.
+                  gapi.client.init({
+                    'apiKey': 'AIzaSyDlB9W5k4M1u608QhpywfLeOR3xilpbJDA',
+                /**
+                 * This function searches for videos related to the keyword 'dogs'. The video IDs and titles
+                 * of the search results are logged to Apps Script's log.
+                 *
+                 * Note that this sample limits the results to 25. To return more results, pass
+                 * additional parameters as documented here:
+                 *   https://developers.google.com/youtube/v3/docs/search/list
+                 */
+                 
+                })
+                }
+                </script>
+        
+
+    
+    <script src="https://apis.google.com/js/api.js"></script>
+<script>
+
+    
+</script>
+        <script src="app1.js"></script>
 </body>
 
 <script>
-</script>
+</script> -->
 </html>
