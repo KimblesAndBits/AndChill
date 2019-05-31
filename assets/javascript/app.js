@@ -79,7 +79,8 @@ $(document).ready(function () {
         $("#rest-address").text(`Address: ${array[arrayIdx].restaurant.location.address}`);
         $("#rest-price").text(`Avg cost for 2: $${array[arrayIdx].restaurant.average_cost_for_two}`);
         $("#rest-rating").text(`Rating: ${array[arrayIdx].restaurant.user_rating.aggregate_rating}`);
-        $("#rest-url").text(`URL: ${array[arrayIdx].restaurant.url}`);
+        $("#rest-url").html(`<a href="${array[arrayIdx].restaurant.url} target="_blank">${array[arrayIdx].restaurant.name}`);
+        $("#rest-pic").attr("src", array[arrayIdx].restaurant.thumb);
     };
 
 
