@@ -15,6 +15,7 @@ $(document).ready(function () {
     var yourState = "";
     var locations = "";
     var foodChoices = "";
+    var restaurantArray = [];
 
     $("choices-form").on("submit", function () {
         event.preventDefault();
@@ -37,7 +38,7 @@ $(document).ready(function () {
                     success: function (msg) {
                         console.log('mes', msg.location_suggestions[0].entity_id);
                         cityID = msg.location_suggestions[0].entity_id;
-                        foodChoices = baseURL + "search?entity_id=" + cityID + "&entity_type=city&radius=5000&cuisines=" + yourFood;
+                        foodChoices = baseURL + "search?entity_id=" + cityID + "&entity_type=city&radius=5000&q=" + yourFood;
                         console.log("ready!"),
                             $.ajax({
                                 type: "GET",
@@ -47,7 +48,7 @@ $(document).ready(function () {
                                 url: foodChoices,
                                 success: function (msg) {
                                     console.log('mes', msg);
-
+                                    populateFood(msg.restaurants);
                                 }
                             });
                     }
@@ -71,6 +72,14 @@ $(document).ready(function () {
         $("#foodInput").val("");
         $("#inputCity").val("");
         $("#inputState").val("");
+    }
+
+    function populateFood(array) {
+        $("#rest-name").text(`Name: ${array[0].restaurant.name}`);
+        $("#rest-address").text(`Address: ${array[0].restaurant.location.address}`);
+        $("#rest-price").text(`Avg cost for 2: ${array[0].restaurant.average_cost_for_two}`);
+        $("#rest-rating").text(`Rating: ${array[0].restaurant.user_rating.aggregate_rating}`);
+        $("#rest-url").text(`URL: ${array[0].restaurant.url}`);
     }
 
 
