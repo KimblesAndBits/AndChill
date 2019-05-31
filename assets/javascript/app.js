@@ -74,7 +74,7 @@ $(document).ready(function () {
     }
 
 
-
+console.log("Thank you!");
 
 
 });
