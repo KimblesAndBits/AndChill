@@ -53,6 +53,7 @@ $(document).ready(function () {
                     }
                 });
         }
+        resetForm();
     });
 
     function checkForm() {
@@ -67,10 +68,6 @@ $(document).ready(function () {
         yourFood = $("#foodInput").val();
         yourCity = $("#inputCity").val();
         yourState = $("#inputState").val();
-        $("#moodInput").val("");
-        $("#foodInput").val("");
-        $("#inputCity").val("");
-        $("#inputState").val("");
     };
 
     function populateFood(array) {
@@ -80,8 +77,17 @@ $(document).ready(function () {
         $("#rest-price").text(`Avg cost for 2: $${array[arrayIdx].restaurant.average_cost_for_two}`);
         $("#rest-rating").text(`Rating: ${array[arrayIdx].restaurant.user_rating.aggregate_rating}`);
         $("#rest-url").html(`<a href="${array[arrayIdx].restaurant.url} target="_blank">${array[arrayIdx].restaurant.name}`);
-        $("#rest-pic").attr("src", array[arrayIdx].restaurant.thumb);
+        if(array[arrayIdx].restaurant.thumb) {
+            $("#rest-pic").attr("src", array[arrayIdx].restaurant.thumb);
+        };
     };
+
+    function resetForm() {
+        $("#moodInput").val("");
+        $("#foodInput").val("");
+        $("#inputCity").val("");
+        $("#inputState").val("");
+    }
 
 
 console.log("Thank you!");
