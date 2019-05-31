@@ -5,25 +5,41 @@ $(document).ready(function() {
             $(this).toggleClass("nav-expanded").css('display', '');
         }); 
     });
-   
+    
+    var formReady = false;
     var yourMood = "";
     var yourFood = "";
     var yourCity = "";
     var yourState = "";
-    var yourZip = 00000;
 
+    $("choices-form").on("submit", function() {
+        event.preventDefault();
+    })
 
     $("#submit-button").on("click", function(){
-        event.preventDefault();
+        checkForm();
+        if(formReady) {
+            console.log("CLICKED IT!");
+            getInfo();
+            formReady = false;
+        }
+    });
+
+    function checkForm() {
+        if($("#moodInput").val() && $("#foodInput").val() && $("#inputCity").val() && $("#inputState").val()) {
+            formReady = true;
+            console.log("Form Ready!");
+        }
+    };
+
+    function getInfo() {
         yourMood = $("#moodInput").val();
         yourFood = $("#foodInput").val();
         yourCity = $("#inputCity").val();
         yourState = $("#inputState").val();
-        yourZip = $("#inputZip").val();
         $("#moodInput").val("");
         $("#foodInput").val("");
         $("#inputCity").val("");
         $("#inputState").val("");
-        $("#inputZip").val("");
-    });
+    }
 }); 
