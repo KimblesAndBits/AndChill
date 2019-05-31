@@ -74,7 +74,7 @@ $(document).ready(function () {
     };
 
     function populateFood(array) {
-        arrayIdx = Math.floor(Math.random() * array.length);
+        var arrayIdx = Math.floor(Math.random() * array.length);
         $("#rest-name").text(`Name: ${array[arrayIdx].restaurant.name}`);
         $("#rest-address").text(`Address: ${array[arrayIdx].restaurant.location.address}`);
         $("#rest-price").text(`Avg cost for 2: $${array[arrayIdx].restaurant.average_cost_for_two}`);
