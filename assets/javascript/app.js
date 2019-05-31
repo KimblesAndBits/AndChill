@@ -73,14 +73,19 @@ $(document).ready(function () {
 
     function populateFood(array) {
         var arrayIdx = Math.floor(Math.random() * array.length);
+        $("#rest-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
         $("#rest-name").html(`<p><span class="sugg-head">Name:</span> ${array[arrayIdx].restaurant.name}</p>`);
         $("#rest-address").html(`<p><span class="sugg-head">Address:</span> ${array[arrayIdx].restaurant.location.address}</p>`);
         $("#rest-price").html(`<p><span class="sugg-head">Average cost for two:</span> $${array[arrayIdx].restaurant.average_cost_for_two}</p>`);
-        $("#rest-rating").html(`<p><span class="sugg-head">Rating:</span> ${array[arrayIdx].restaurant.user_rating.aggregate_rating}</p>`);
         $("#rest-url").html(`<a href="${array[arrayIdx].restaurant.url} target="_blank">${array[arrayIdx].restaurant.name}</p>`);
-        if(array[arrayIdx].restaurant.thumb) {
+        if (array[arrayIdx].restaurant.thumb) {
             $("#rest-pic").attr("src", array[arrayIdx].restaurant.thumb);
         };
+        if (array[arrayIdx].restaurant.user_rating.aggregate_rating) {
+            $("#rest-rating").html(`<p><span class="sugg-head">Rating:</span> ${array[arrayIdx].restaurant.user_rating.aggregate_rating}</p>`);
+        } else {
+            $("#rest-rating").html(`<p><span class="sugg-head">Rating:</span> Pretty Dang Good!</p>`);
+        }
     };
 
     function resetForm() {
@@ -91,7 +96,7 @@ $(document).ready(function () {
     }
 
 
-console.log("Thank you!");
+    console.log("Thank you!");
 
 
 });
