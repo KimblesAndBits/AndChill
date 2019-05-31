@@ -159,7 +159,7 @@ html {
         float: none;
         border-bottom: 2px solid black;
     }
-    div.nav-menu, ul, li: last-child {
+    div.nav-menu, ul, li.last-child {
         border-bottom: none;
     }
 }
