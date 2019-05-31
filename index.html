@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>    
+<head> 
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   
 </head>
 <body>
 </body>
 
 <script>
+$(document).ready(function () {
+    var baseURL= "https://developers.zomato.com/api/v2.1/";
+    var categories = baseURL + "categories";
+    var locations = baseURL + "locations?query=" + '$("#inputCity").val()' + "%2C" + '$("#inputState").val()';
+    var cityID;
+    var foodChoices = locations + "cuisine_name=" + '("foodInput").val()';
+    
+  var config = [
+    console.log("ready!"),
+    $.ajax({
+    type: "GET",
+    beforeSend: function (request) {
+      request.setRequestHeader("user-key", 'fc5e13c945185137ec8e98446ea28a62');
+    },
+    url: locations,
+    success: function (msg) {
+      console.log('mes', msg.location_suggestions[0].entity_id); 
+      cityID = msg.location_suggestions[0].entity_id;
+    
+    }
+  })];
+      console.log(config);
+
+
+  });
 </script>
 </html>
