@@ -8,6 +8,16 @@ html {
         background: white;
     }
 
+    #trailer-div {
+        position: relative;
+        width: 100%;
+    }
+
+    #trailer-embed {
+        position: relative;
+        padding-bottom: 56.25%;
+    }
+
     body {
         color: #305782;
         background: url(https://hpshplaidline.files.wordpress.com/2019/03/movies-featured.jpg);

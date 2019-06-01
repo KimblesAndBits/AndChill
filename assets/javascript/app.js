@@ -27,57 +27,52 @@ $(document).ready(function () {
     $("#submit-button").on("click", function () {
         checkForm();
         if (formReady) {
-            console.log("CLICKED IT!");
             getInfo();
             formReady = false;
             locations = zomatoUrl + "locations?query=" + yourCity + "%2C" + yourState;
-            console.log("ready!"),
-                $.ajax({
-                    type: "GET",
-                    beforeSend: function (request) {
-                        request.setRequestHeader("user-key", 'fc5e13c945185137ec8e98446ea28a62');
-                    },
-                    url: locations,
-                    success: function (msg) {
-                        console.log('mes', msg.location_suggestions[0].entity_id);
-                        cityID = msg.location_suggestions[0].entity_id;
-                        foodChoices = zomatoUrl + "search?entity_id=" + cityID + "&entity_type=city&radius=5000&q=" + yourFood;
-                        console.log("ready!"),
-                            $.ajax({
-                                type: "GET",
-                                beforeSend: function (request) {
-                                    request.setRequestHeader("user-key", 'fc5e13c945185137ec8e98446ea28a62');
-                                },
-                                url: foodChoices,
-                                success: function (msg) {
-                                    console.log('mes', msg);
-                                    populateFood(msg.restaurants);
-                                    foodArray = msg.restaurants;
-                                }
-                            });
-                    }
-                });
+            $.ajax({
+                type: "GET",
+                beforeSend: function (request) {
+                    request.setRequestHeader("user-key", 'fc5e13c945185137ec8e98446ea28a62');
+                },
+                url: locations,
+                success: function (msg) {
+                    cityID = msg.location_suggestions[0].entity_id;
+                    foodChoices = zomatoUrl + "search?entity_id=" + cityID + "&entity_type=city&radius=25000&q=" + yourFood;
+                    $.ajax({
+                        type: "GET",
+                        beforeSend: function (request) {
+                            request.setRequestHeader("user-key", 'fc5e13c945185137ec8e98446ea28a62');
+                        },
+                        url: foodChoices,
+                        success: function (msg) {
+                            populateFood(msg.restaurants);
+                            foodArray = msg.restaurants;
+                        }
+                    });
+                }
+            });
 
-                $.ajax({
-                    url: movieUrl + yourMood,
-                    method: "GET"
-                }).then(function(response) {
-                    populateMovie(response.results);
-                    movieArray = response.results;
-                });
+            $.ajax({
+                url: movieUrl + yourMood,
+                method: "GET"
+            }).then(function (response) {
+                populateMovie(response.results);
+                movieArray = response.results;
+            });
 
         }
         resetForm();
     });
 
     $("#food-reset").on("click", function () {
-        if(foodArray) {
+        if (foodArray) {
             populateFood(foodArray);
         };
     });
 
     $("#movie-reset").on("click", function () {
-        if(movieArray) {
+        if (movieArray) {
             populateMovie(movieArray);
         };
     });
@@ -85,7 +80,6 @@ $(document).ready(function () {
     function checkForm() {
         if ($("#moodInput").val() && $("#foodInput").val() && $("#inputCity").val() && $("#inputState").val()) {
             formReady = true;
-            console.log("Form Ready!");
         }
     };
 
@@ -98,7 +92,7 @@ $(document).ready(function () {
 
     function populateFood(array) {
         var arrayIdx = Math.floor(Math.random() * array.length);
-        if(array[arrayIdx]){
+        if (array[arrayIdx]) {
             $("#rest-name").html(`<p><span class="sugg-head">Name:</span> ${array[arrayIdx].restaurant.name}</p>`);
             $("#rest-address").html(`<p><span class="sugg-head">Address:</span> ${array[arrayIdx].restaurant.location.address}</p>`);
             $("#rest-price").html(`<p><span class="sugg-head">Average cost for two:</span> $${array[arrayIdx].restaurant.average_cost_for_two}</p>`);
@@ -137,17 +131,21 @@ $(document).ready(function () {
             $("#movie-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
         };
         var movieId = array[arrayIdx].id;
-
         $.ajax({
             url: `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US`,
             method: "GET"
-        }).then(function(response) {
-            console.log("LOOK HERE!" + results)
-            $("#trailer-url").html(`<p><span class="sugg-head">Trailer: </span><a href="https://www.youtube.com/watch?v=${response.results[0].key}}" target="_blank">${array[arrayIdx].title}</p>`);
+        }).then(function (response) {
+            console.log(response)
+            $("#trailer-embed").html(`<iframe id="trailer" src="https://www.youtube.com/embed/${response.results[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+            $("#trailer").css("position", "absolute");
+            $("#trailer").css("top", "0");
+            $("#trailer").css("left", "0");
+            $("#trailer").css("right", "0");
+            $("#trailer").css("bottom", "0");
+            $("#trailer").css("height", "100%");
+            $("#trailer").css("width", "100%");
         });
     }
-
-    console.log("Thank you!");
 
 
 });
