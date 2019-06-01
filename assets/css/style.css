@@ -21,6 +21,7 @@ html {
     body {
         color: #305782;
         background: url(https://hpshplaidline.files.wordpress.com/2019/03/movies-featured.jpg);
+        background-attachment: fixed;
         line-height: 1.5em;
         padding: 0;
         margin: 0;
@@ -41,6 +42,10 @@ html {
         padding-top: 10px;
         padding-bottom: 10px;
         text-align: center;
+    }
+
+    #input-card {
+        height: 130px;
     }
 
     #content {
@@ -72,14 +77,14 @@ html {
     }
 
     #header {
-        background: url(https://images.pexels.com/photos/755726/pexels-photo-755726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+        background: url(https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
         text-align: center;
         color: #FFF;
         font-family: 'Sonsie One', cursive;
     }
 
     #footer {
-        background: url(https://images.pexels.com/photos/755726/pexels-photo-755726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+        background: url(https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
         text-align: center;
         color: #FFF;
         font-family: 'Sonsie One', cursive;
