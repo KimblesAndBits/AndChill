@@ -15,8 +15,7 @@ $(document).ready(function () {
     var yourState = "";
     var locations = "";
     var foodChoices = "";
-    var baseURL2 = "https://api.themoviedb.org/3/discover/movie?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US&region=US&with_genres=" + genreID;
-    var genreID = $("#moodInput").val();
+    var movieUrl = "https://api.themoviedb.org/3/discover/movie?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US&region=US&with_genres=";
     var formReady = false;
 
     $("choices-form").on("submit", function () {
@@ -57,7 +56,7 @@ $(document).ready(function () {
                 });
 
                 $.ajax({
-                    url: baseURL2,
+                    url: movieUrl + yourMood,
                     method: "GET"
                 }).then(function(response) {
                     populateMovie(response.results);
@@ -107,12 +106,12 @@ $(document).ready(function () {
     }
 
     function populateMovie(array) {
-        $("#movie-name").text(`Name: ${array[0].results.title}`);
-        $("#movie-genre").text(`Genre: ${array[0].restaurant.location.address}`);
-        $("#movie-rating").text(`Rating: ${array[0].restaurant.average_cost_for_two}`);
-        $("#movie-year").text(`Release Year: ${array[0].restaurant.user_rating.aggregate_rating}`);
-        $("#movie-director").text(`Director: ${array[0].restaurant.url}`);
         console.log(array);
+        $("#movie-name").text(`Name: ${array[0].title}`);
+        $("#movie-genre").text(`Genre: ${array[0]}`);
+        $("#movie-rating").text(`Rating: ${array[0]}`);
+        $("#movie-year").text(`Release Year: ${array[0]}`);
+        $("#movie-director").text(`Director: ${array[0]}`);
     }
 
     console.log("Thank you!");
