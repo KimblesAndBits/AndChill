@@ -106,12 +106,13 @@ $(document).ready(function () {
     }
 
     function populateMovie(array) {
-        $("#movie-name").text(`Name: ${array[0].title}`);
-        $("#movie-rating").text(`Rating: ${array[0].vote_average}`);
-        $("#movie-year").text(`Release: ${array[0].release_date}`);
-        $("#movie-bio").text(`Overview: ${array[0].overview}`);
-        if (array[arrayIdx].restaurant.thumb) {
-            $("#movie-pic").attr("src", array[0].results.poster_path);
+        var arrayIdx = Math.floor(Math.random() * array.length);
+        $("#movie-name").html(`<p><span class="sugg-head">Name:</span> ${array[arrayIdx].title}</p>`);
+        $("#movie-rating").html(`<p><span class="sugg-head">Rating:</span> ${array[arrayIdx].vote_average}</p>`);
+        $("#movie-year").html(`<p><span class="sugg-head">Release:</span> ${array[arrayIdx].release_date}</p>`);
+        $("#movie-bio").html(`<p><span class="sugg-head">Overview:</span> ${array[arrayIdx].overview}</p>`);
+        if (array[arrayIdx].poster_path) {
+            $("#movie-pic").attr("src", "https://image.tmdb.org/t/p/w1280" + array[arrayIdx].poster_path);
         } else {
             $("#movie-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
         };
