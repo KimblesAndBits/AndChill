@@ -15,8 +15,7 @@ $(document).ready(function () {
     var yourState = "";
     var locations = "";
     var foodChoices = "";
-    var baseURL2 = "https://api.themoviedb.org/3/discover/movie?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US&region=US&with_genres=" + genreID;
-    var genreID = $("#moodInput").val();
+    var movieUrl = "https://api.themoviedb.org/3/discover/movie?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US&region=US&with_genres=";
     var formReady = false;
 
     $("choices-form").on("submit", function () {
@@ -57,7 +56,7 @@ $(document).ready(function () {
                 });
 
                 $.ajax({
-                    url: baseURL2,
+                    url: movieUrl + yourMood,
                     method: "GET"
                 }).then(function(response) {
                     populateMovie(response.results);
@@ -107,12 +106,16 @@ $(document).ready(function () {
     }
 
     function populateMovie(array) {
-        $("#movie-name").text(`Name: ${array[0].results.title}`);
-        $("#movie-genre").text(`Genre: ${array[0].restaurant.location.address}`);
-        $("#movie-rating").text(`Rating: ${array[0].restaurant.average_cost_for_two}`);
-        $("#movie-year").text(`Release Year: ${array[0].restaurant.user_rating.aggregate_rating}`);
-        $("#movie-director").text(`Director: ${array[0].restaurant.url}`);
-        console.log(array);
+        var arrayIdx = Math.floor(Math.random() * array.length);
+        $("#movie-name").html(`<p><span class="sugg-head">Name:</span> ${array[arrayIdx].title}</p>`);
+        $("#movie-rating").html(`<p><span class="sugg-head">Rating:</span> ${array[arrayIdx].vote_average}</p>`);
+        $("#movie-year").html(`<p><span class="sugg-head">Release:</span> ${array[arrayIdx].release_date}</p>`);
+        $("#movie-bio").html(`<p><span class="sugg-head">Overview:</span> ${array[arrayIdx].overview}</p>`);
+        if (array[arrayIdx].poster_path) {
+            $("#movie-pic").attr("src", "https://image.tmdb.org/t/p/w1280" + array[arrayIdx].poster_path);
+        } else {
+            $("#movie-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
+        };
     }
 
     console.log("Thank you!");
