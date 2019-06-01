@@ -17,6 +17,8 @@ $(document).ready(function () {
     var foodChoices = "";
     var movieUrl = "https://api.themoviedb.org/3/discover/movie?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US&region=US&with_genres=";
     var formReady = false;
+    var movieArray = [];
+    var foodArray = [];
 
     $("choices-form").on("submit", function () {
         event.preventDefault();
@@ -50,6 +52,7 @@ $(document).ready(function () {
                                 success: function (msg) {
                                     console.log('mes', msg);
                                     populateFood(msg.restaurants);
+                                    foodArray = msg.restaurants;
                                 }
                             });
                     }
@@ -60,10 +63,23 @@ $(document).ready(function () {
                     method: "GET"
                 }).then(function(response) {
                     populateMovie(response.results);
-                })
+                    movieArray = response.results;
+                });
 
         }
         resetForm();
+    });
+
+    $("#food-reset").on("click", function () {
+        if(foodArray) {
+            populateFood(foodArray);
+        };
+    });
+
+    $("#movie-reset").on("click", function () {
+        if(movieArray) {
+            populateMovie(movieArray);
+        };
     });
 
     function checkForm() {
@@ -116,6 +132,15 @@ $(document).ready(function () {
         } else {
             $("#movie-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
         };
+        var movieId = array[arrayIdx].id;
+
+        $.ajax({
+            url: `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US`,
+            method: "GET"
+        }).then(function(response) {
+            console.log("LOOK HERE!" + results)
+            $("#trailer-url").html(`<p><span class="sugg-head">Trailer: </span><a href="https://www.youtube.com/watch?v=${response.results[0].key}} target="_blank">${array[arrayIdx].title}</p>`);
+        });
     }
 
     console.log("Thank you!");
