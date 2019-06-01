@@ -6,7 +6,7 @@ $(document).ready(function () {
         });
     });
 
-    var baseURL = "https://developers.zomato.com/api/v2.1/";
+    var zomatoUrl = "https://developers.zomato.com/api/v2.1/";
     var cityID = 0;
     var formReady = false;
     var yourMood = "";
@@ -26,7 +26,7 @@ $(document).ready(function () {
             console.log("CLICKED IT!");
             getInfo();
             formReady = false;
-            locations = baseURL + "locations?query=" + yourCity + "%2C" + yourState;
+            locations = zomatoUrl + "locations?query=" + yourCity + "%2C" + yourState;
             console.log("ready!"),
                 $.ajax({
                     type: "GET",
@@ -37,7 +37,7 @@ $(document).ready(function () {
                     success: function (msg) {
                         console.log('mes', msg.location_suggestions[0].entity_id);
                         cityID = msg.location_suggestions[0].entity_id;
-                        foodChoices = baseURL + "search?entity_id=" + cityID + "&entity_type=city&radius=5000&q=" + yourFood;
+                        foodChoices = zomatoUrl + "search?entity_id=" + cityID + "&entity_type=city&radius=5000&q=" + yourFood;
                         console.log("ready!"),
                             $.ajax({
                                 type: "GET",
