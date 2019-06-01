@@ -107,10 +107,10 @@ $(document).ready(function () {
 
     function populateMovie(array) {
         var arrayIdx = Math.floor(Math.random() * array.length);
-        $("#movie-name").text(`Name: ${array[arrayIdx].title}`);
-        $("#movie-rating").text(`Rating: ${array[arrayIdx].vote_average}`);
-        $("#movie-year").text(`Release: ${array[arrayIdx].release_date}`);
-        $("#movie-bio").text(`Overview: ${array[arrayIdx].overview}`);
+        $("#movie-name").html(`<p><span class="sugg-head">Name:</span> ${array[arrayIdx].title}</p>`);
+        $("#movie-rating").html(`<p><span class="sugg-head">Rating:</span> ${array[arrayIdx].vote_average}</p>`);
+        $("#movie-year").html(`<p><span class="sugg-head">Release:</span> ${array[arrayIdx].release_date}</p>`);
+        $("#movie-bio").html(`<p><span class="sugg-head">Overview:</span> ${array[arrayIdx].overview}</p>`);
         if (array[arrayIdx].poster_path) {
             $("#movie-pic").attr("src", "https://image.tmdb.org/t/p/w1280" + array[arrayIdx].poster_path);
         } else {
