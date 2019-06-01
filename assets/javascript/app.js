@@ -106,12 +106,15 @@ $(document).ready(function () {
     }
 
     function populateMovie(array) {
-        console.log(array);
         $("#movie-name").text(`Name: ${array[0].title}`);
-        $("#movie-genre").text(`Genre: ${array[0]}`);
-        $("#movie-rating").text(`Rating: ${array[0]}`);
-        $("#movie-year").text(`Release Year: ${array[0]}`);
-        $("#movie-director").text(`Director: ${array[0]}`);
+        $("#movie-rating").text(`Rating: ${array[0].vote_average}`);
+        $("#movie-year").text(`Release: ${array[0].release_date}`);
+        $("#movie-bio").text(`Overview: ${array[0].overview}`);
+        if (array[arrayIdx].restaurant.thumb) {
+            $("#movie-pic").attr("src", array[0].results.poster_path);
+        } else {
+            $("#movie-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
+        };
     }
 
     console.log("Thank you!");
