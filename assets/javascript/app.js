@@ -106,12 +106,13 @@ $(document).ready(function () {
     }
 
     function populateMovie(array) {
-        $("#movie-name").text(`Name: ${array[0].title}`);
-        $("#movie-rating").text(`Rating: ${array[0].vote_average}`);
-        $("#movie-year").text(`Release: ${array[0].release_date}`);
-        $("#movie-bio").text(`Overview: ${array[0].overview}`);
-        if (array[arrayIdx].restaurant.thumb) {
-            $("#movie-pic").attr("src", array[0].results.poster_path);
+        var arrayIdx = Math.floor(Math.random() * array.length);
+        $("#movie-name").text(`Name: ${array[arrayIdx].title}`);
+        $("#movie-rating").text(`Rating: ${array[arrayIdx].vote_average}`);
+        $("#movie-year").text(`Release: ${array[arrayIdx].release_date}`);
+        $("#movie-bio").text(`Overview: ${array[arrayIdx].overview}`);
+        if (array[arrayIdx].poster_path) {
+            $("#movie-pic").attr("src", "https://image.tmdb.org/t/p/w1280" + array[arrayIdx].poster_path);
         } else {
             $("#movie-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
         };
