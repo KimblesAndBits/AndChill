@@ -6,7 +6,7 @@ $(document).ready(function () {
         });
     });
 
-    var baseURL = "https://developers.zomato.com/api/v2.1/";
+    var zomatoUrl = "https://developers.zomato.com/api/v2.1/";
     var cityID = 0;
     var formReady = false;
     var yourMood = "";
@@ -15,6 +15,9 @@ $(document).ready(function () {
     var yourState = "";
     var locations = "";
     var foodChoices = "";
+    var baseURL2 = "https://api.themoviedb.org/3/discover/movie?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US&region=US&with_genres=" + genreID;
+    var genreID = $("#moodInput").val();
+    var formReady = false;
 
     $("choices-form").on("submit", function () {
         event.preventDefault();
@@ -26,7 +29,7 @@ $(document).ready(function () {
             console.log("CLICKED IT!");
             getInfo();
             formReady = false;
-            locations = baseURL + "locations?query=" + yourCity + "%2C" + yourState;
+            locations = zomatoUrl + "locations?query=" + yourCity + "%2C" + yourState;
             console.log("ready!"),
                 $.ajax({
                     type: "GET",
@@ -37,7 +40,7 @@ $(document).ready(function () {
                     success: function (msg) {
                         console.log('mes', msg.location_suggestions[0].entity_id);
                         cityID = msg.location_suggestions[0].entity_id;
-                        foodChoices = baseURL + "search?entity_id=" + cityID + "&entity_type=city&radius=5000&q=" + yourFood;
+                        foodChoices = zomatoUrl + "search?entity_id=" + cityID + "&entity_type=city&radius=5000&q=" + yourFood;
                         console.log("ready!"),
                             $.ajax({
                                 type: "GET",
@@ -52,6 +55,14 @@ $(document).ready(function () {
                             });
                     }
                 });
+
+                $.ajax({
+                    url: baseURL2,
+                    method: "GET"
+                }).then(function(response) {
+                    populateMovie(response.results);
+                })
+
         }
         resetForm();
     });
@@ -95,6 +106,14 @@ $(document).ready(function () {
         $("#inputState").val("");
     }
 
+    function populateMovie(array) {
+        $("#movie-name").text(`Name: ${array[0].results.title}`);
+        $("#movie-genre").text(`Genre: ${array[0].restaurant.location.address}`);
+        $("#movie-rating").text(`Rating: ${array[0].restaurant.average_cost_for_two}`);
+        $("#movie-year").text(`Release Year: ${array[0].restaurant.user_rating.aggregate_rating}`);
+        $("#movie-director").text(`Director: ${array[0].restaurant.url}`);
+        console.log(array);
+    }
 
     console.log("Thank you!");
 
