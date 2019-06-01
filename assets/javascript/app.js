@@ -53,6 +53,7 @@ $(document).ready(function () {
                     }
                 });
         }
+        resetForm();
     });
 
     function checkForm() {
@@ -67,22 +68,35 @@ $(document).ready(function () {
         yourFood = $("#foodInput").val();
         yourCity = $("#inputCity").val();
         yourState = $("#inputState").val();
+    };
+
+    function populateFood(array) {
+        var arrayIdx = Math.floor(Math.random() * array.length);
+        $("#rest-name").html(`<p><span class="sugg-head">Name:</span> ${array[arrayIdx].restaurant.name}</p>`);
+        $("#rest-address").html(`<p><span class="sugg-head">Address:</span> ${array[arrayIdx].restaurant.location.address}</p>`);
+        $("#rest-price").html(`<p><span class="sugg-head">Average cost for two:</span> $${array[arrayIdx].restaurant.average_cost_for_two}</p>`);
+        $("#rest-url").html(`<a href="${array[arrayIdx].restaurant.url} target="_blank">${array[arrayIdx].restaurant.name}</p>`);
+        if (array[arrayIdx].restaurant.thumb) {
+            $("#rest-pic").attr("src", array[arrayIdx].restaurant.thumb);
+        } else {
+            $("#rest-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
+        };
+        if (array[arrayIdx].restaurant.user_rating.aggregate_rating) {
+            $("#rest-rating").html(`<p><span class="sugg-head">Rating:</span> ${array[arrayIdx].restaurant.user_rating.aggregate_rating}</p>`);
+        } else {
+            $("#rest-rating").html(`<p><span class="sugg-head">Rating:</span> Pretty Dang Good!</p>`);
+        }
+    };
+
+    function resetForm() {
         $("#moodInput").val("");
         $("#foodInput").val("");
         $("#inputCity").val("");
         $("#inputState").val("");
     }
 
-    function populateFood(array) {
-        $("#rest-name").text(`Name: ${array[0].restaurant.name}`);
-        $("#rest-address").text(`Address: ${array[0].restaurant.location.address}`);
-        $("#rest-price").text(`Avg cost for 2: $${array[0].restaurant.average_cost_for_two}`);
-        $("#rest-rating").text(`Rating: ${array[0].restaurant.user_rating.aggregate_rating}`);
-        $("#rest-url").text(`URL: ${array[0].restaurant.url}`);
-    }
 
-
-console.log("Thank you!");
+    console.log("Thank you!");
 
 
 });

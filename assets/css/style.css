@@ -48,6 +48,11 @@ html {
         width: 220px;
         height: 200px;
       }
+
+      .sugg-head {
+          font-weight: bolder;
+          font-size: 1.25rem;
+      }
     
     .page-header {
         background-color: #FFF;
