@@ -52,6 +52,10 @@ html {
         background: url(https://images.pexels.com/photos/755726/pexels-photo-755726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     }
 
+    #about {
+        background: url(https://images.pexels.com/photos/755726/pexels-photo-755726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    }
+
     .card-img {
         display: block;
         margin-left: auto;
