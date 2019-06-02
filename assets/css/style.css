@@ -64,6 +64,14 @@ html {
         height: 200px;
       }
 
+      .card-rec-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px;
+        height: auto;
+      }
+
       .sugg-head {
           font-weight: bolder;
           font-size: 1.25rem;
