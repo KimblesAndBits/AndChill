@@ -5,7 +5,7 @@ $(document).ready(function () {
             $(this).toggleClass("nav-expanded").css('display', '');
         });
     });
-
+    //variables for both API's
     var zomatoUrl = "https://developers.zomato.com/api/v2.1/";
     var cityID = 0;
     var formReady = false;
@@ -24,6 +24,7 @@ $(document).ready(function () {
         event.preventDefault();
     })
 
+    //on click for submit button --> ajax requests from API's 
     $("#submit-button").on("click", function () {
         checkForm();
         if (formReady) {
@@ -35,10 +36,12 @@ $(document).ready(function () {
                 beforeSend: function (request) {
                     request.setRequestHeader("user-key", 'fc5e13c945185137ec8e98446ea28a62');
                 },
+                //pulling the city ID number from user choice
                 url: locations,
                 success: function (msg) {
                     cityID = msg.location_suggestions[0].entity_id;
                     foodChoices = zomatoUrl + "search?entity_id=" + cityID + "&entity_type=city&radius=25000&q=" + yourFood;
+                    //Zomato ajax request
                     $.ajax({
                         type: "GET",
                         beforeSend: function (request) {
@@ -52,7 +55,7 @@ $(document).ready(function () {
                     });
                 }
             });
-
+            //TMB ajax request
             $.ajax({
                 url: movieUrl + yourMood,
                 method: "GET"
@@ -62,6 +65,7 @@ $(document).ready(function () {
             });
 
         }
+        //clear the entry fields
         resetForm();
     });
 
@@ -76,20 +80,20 @@ $(document).ready(function () {
             populateMovie(movieArray);
         };
     });
-
+    //making sure all the forms are filled out before it submits
     function checkForm() {
         if ($("#moodInput").val() && $("#foodInput").val() && $("#inputCity").val() && $("#inputState").val()) {
             formReady = true;
         }
     };
-
+    //grabbing the user inputs and assigning variables
     function getInfo() {
         yourMood = $("#moodInput").val();
         yourFood = $("#foodInput").val();
         yourCity = $("#inputCity").val();
         yourState = $("#inputState").val();
     };
-
+    //pulling data from the API based on user input and randomizing the result so they get a differnt result each time
     function populateFood(array) {
         var arrayIdx = Math.floor(Math.random() * array.length);
         if (array[arrayIdx]) {
@@ -111,7 +115,7 @@ $(document).ready(function () {
             $("#rest-name").html(`There are no ${yourFood} restaurants near you!`);
         }
     };
-
+    //clear the values from the form
     function resetForm() {
         $("#moodInput").val("");
         $("#foodInput").val("");
@@ -119,6 +123,7 @@ $(document).ready(function () {
         $("#inputState").val("");
     }
 
+    //pulling data from the API based on user input and randomizing the result so they get a differnt result each time
     function populateMovie(array) {
         var arrayIdx = Math.floor(Math.random() * array.length);
         $("#movie-name").html(`<p><span class="sugg-head">Name:</span> ${array[arrayIdx].title}</p>`);
@@ -131,6 +136,8 @@ $(document).ready(function () {
             $("#movie-pic").attr("src", "https://www.quizony.com/favorite-food-quiz/favorite-food-quiz-small.jpg");
         };
         var movieId = array[arrayIdx].id;
+
+        //second ajax so we can input the movie ID number
         $.ajax({
             url: `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=eb7d3ac3ab4b5230cee7db1df74366fd&language=en-US`,
             method: "GET"
