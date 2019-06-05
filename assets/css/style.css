@@ -62,6 +62,7 @@ html {
         margin-right: auto;
         width: 220px;
         height: 200px;
+        max-width: 100%;
       }
 
       .card-rec-img {
