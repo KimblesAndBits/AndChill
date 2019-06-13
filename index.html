@@ -51,7 +51,7 @@
 					<div class="accordion" id="accordionExample">
 
 						<div class="container">
-							<form id="choices-form">
+							<form id="choices-form" data-parsley-validate data-parsley-focus="none">
 								<div class="row">
 									<div class="col-md-4">
 										<div class="card">
@@ -74,7 +74,7 @@
 														<div class="card-body" id="input-card">
 															<!-- Mood form -->
 															<div class="form-group">
-																<select class="form-control" id="moodInput" required>
+																<select class="form-control" id="moodInput" data-parsley-no-focus required>
 																	<option value="" selected>Choose...</option>
 																	<option value="28">Action</option>
 																	<option value="12">Adventure</option>
@@ -124,7 +124,7 @@
 														<div class="card-body" id="input-card">
 															<!-- Favorite food form -->
 															<div class="form-group">
-																<select class="form-control" id="foodInput" required>
+																<select class="form-control" id="foodInput" data-parsley-no-focus required>
 																	<option value="" selected>Choose...</option>
 																	<option>African</option>
 																	<option>American</option>
@@ -225,11 +225,11 @@
 															<div class="form-row">
 																<div class="form-group col-md-6">
 																	<label for="inputCity">City</label>
-																	<input type="text" class="form-control" id="inputCity" required>
+																	<input type="text" class="form-control" id="inputCity" data-parsley-no-focus required>
 																</div>
 																<div class="form-group col-md-6">
 																	<label for="inputState">State</label>
-																	<select id="inputState" class="form-control" required>
+																	<select id="inputState" class="form-control" data-parsley-no-focus required>
 																		<option value="" selected>Choose...</option>
 																		<option>AL</option>
 																		<option>AK</option>
